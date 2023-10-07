@@ -33,3 +33,29 @@ export const GET_SPACEX_ROCKET_DATA = gql`
       }
   }
 `;
+
+export const GET_SPACEX_COMPANT_INFO = gql`
+ query SpaceXData{
+  company {
+    ceo
+    coo
+    cto_propulsion
+    cto
+    employees
+    founded
+    founder
+    headquarters {
+      address
+    }
+    launch_sites
+    links {
+      website
+    }
+    summary
+    name
+    test_sites
+    valuation
+    vehicles
+  }
+ }
+`;
