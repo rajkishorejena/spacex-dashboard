@@ -4,8 +4,15 @@ import logo from "../Assets/Images/Png/logo.png";
 import { useNavigate } from "react-router-dom";
 import Lottie from "lottie-react";
 import Rocket_Launch from "../Assets/Other/Rocket_launch.json";
+import { useSelector } from "react-redux";
+import { RootState } from "../Redux/Store/Store";
+
 function Home() {
   const navigate = useNavigate();
+  const authState = useSelector(
+    (state: RootState) => state.userInfo.isAuthenticate
+  );
+  console.log("authState", authState);
   return (
     <section className="pb-5">
       <header className="w-full bg-gray-900 p-2 ">
@@ -40,7 +47,11 @@ function Home() {
               <button
                 className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-md text-lg md:text-xl lg:text-2xl transition duration-300 ease-in-out"
                 onClick={() => {
-                  navigate("/dashboard");
+                  if (authState) {
+                    navigate("/dashboard");
+                  } else {
+                    alert("You are not authenticated.....");
+                  }
                 }}
               >
                 Dashboard
