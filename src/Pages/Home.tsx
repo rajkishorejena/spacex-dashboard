@@ -7,7 +7,7 @@ import Rocket_Launch from "../Assets/Other/Rocket_launch.json";
 function Home() {
   const navigate = useNavigate();
   return (
-    <section>
+    <section className="pb-5">
       <header className="w-full bg-gray-900 p-2 ">
         <img className="w-24 h-9" src={logo} alt="space-x" />
       </header>

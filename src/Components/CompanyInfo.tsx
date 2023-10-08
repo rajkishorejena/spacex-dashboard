@@ -73,7 +73,7 @@ const CompanyInfo = () => {
     );
   };
   return (
-    <div className="bg-white shadow-lg rounded-lg p-6 m-4 md:m-8 lg:m-12">
+    <div className="bg-white  rounded-lg p-6">
       {loading ? (
         <p>Loading Company Info</p>
       ) : (
